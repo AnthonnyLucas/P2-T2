@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) throws Exception {
 
+        //NESSA PARTE CRIAMOS O PRIMEIRO PERSONAGEM O VILÃO. E COMEÇAMOS A INTRODUÇÃO DA HISTÓRIA.
         Personagem Beelzebumon = new Personagem("Beelzebumon", "Trevas", 100, 8000);
 
         System.out.println("[Bem-Vindo ao Digi_Mundo. Você é um Digi_Escolhido, sua missão é salvar esse mundo!!!]\n [ Você pode me falar o seu nome? ]\n");
@@ -16,7 +17,9 @@ public class Principal {
         System.out.println("Vamos escolher um companheiro( Digimon ) para você inciar a jornada!\n\n[ == DIGIMONS == ]:\n[ AGUMON ]\n[ GUILMON ]\n[ GABUMON ]\nR:");
         Scanner dig = new Scanner(System.in);
         String digimon = dig.nextLine();
-        
+
+        //NESSE PARTE FOI CRIADO UMA SELAÇÃO DE PERSONAGENS. COM 3 ALTERNATIVAS.
+
         if(dig.equals("[ AGUMON ]")){
             System.out.println("Você escolheu AGUMON como o seu Digimon!");
         }
@@ -27,6 +30,8 @@ public class Principal {
                     System.out.println("Você escolheu GABUMON como o seu Digimon!");
         }
         
+        //TODO O ENREDO DA HISTÓRIA FOI DESCRITA NESSA PARTE.
+
         System.out.println("O seu" + dig + "tem um nickname! Ela se chama ' THAY '!\n\n");
         System.out.println("Agora a sua história se inicia, você e seu Digimon vão aprocura do Beelzebumon, que é o responsavel por todo esse caos.");
         System.out.println("Depois de passar em um vilarejo um morador lhe fala que Beelzebumon quer tomar o poder dos Digimons Anciões.");
@@ -40,24 +45,31 @@ public class Principal {
         System.out.println("E se ele fosse puro ele passaria o seu poder para nos, mas se não fosse morreriamos no processo.");
         System.out.println("Felizmente conseguimos o poder do Digimon Ancião e fomos Atraz do Beelzebumon para derrotarmos ele, e achamos ele no seu castelo.\n ");
 
+        //CRIAMOS O SEGUNDO PERSONAGEM.
+
         Personagem digimon1 = new Personagem("Thay", "Fogo", 100, 8000);      
         System.out.println("[ Você está pronto para essa  batalha! ]");
         
+        //INICIAMOS UM SISTEMA DE BATALHA .
+
         System.out.println(" [ A BATALHA COMEÇOU! ]");
         System.out.println(" [ Beelzebumon se prepara para Batalha Final ]");
         Scanner pdr = new Scanner(System.in);
         String poder;
         System.out.println("Escolha entre uma das opções para continuar! (BATALHAR ou JUNTAR)");
         poder = pdr.nextLine();
-        
+
+        //INICIAMOS UM SISTEMA DE BATALHAS COM PERDE E GANHOS DE PONTOS, TANTO DE VIDA COMO DE EXP.
+
         if(poder.equals("BATALHAR")){
             System.out.println("[ Seu ataque foi muito forte!E arrancou 50 de vida do oponente! ]\n");
             
             Beelzebumon.dano(50);
             Beelzebumon.Dig();
 
-            System.out.println("[ Beelzebulmon ataca, mas acaba errado o seu ataque e não consegue te acertar!]");
-            System.out.println("O 'THAY' está assim:\n");
+            System.out.println("[ Beelzebumon ataca, mas acaba errado o seu ataque e não consegue te acertar!]");
+            System.out.println("O ataque de 'THAY' recuperou vida:\n");
+            digimon1.recupera(50);
             digimon1.Dig();
             
             System.out.println("[ A batalha cotinua!]");
@@ -67,34 +79,66 @@ public class Principal {
             String poder_2;
             poder_2 = pdr_2.nextLine();
             
+            //PRIMEIRO FINAL. O BEM GANHA.
+
             if(poder_2.equals("BATALHAR")){
-                System.out.println("A BATALHA CHEGOU AO FIM!");
+
+                System.out.println("BEELZEBUMON FOI DERROTADO !!!\n\n");
                 Beelzebumon.dano(50);
+                Beelzebumon.N_evolui(8000);
                 Beelzebumon.Dig();
+
+                System.out.println("SEU DIGIMON ESTÁ DIGI_EVOLUINDO PARA UMA FORMA CELESTE!\n");
+                digimon1.recupera(50);
+                digimon1.evolui(8000);
+                digimon1.Dig();
+                System.out.println("A BATALHA CHEGOU AO FIM!");
 
             }
             
+            //SEGUNDO FINAL. O MAL GANHA.
+
             if(poder_2.equals("JUNTAR")){
-                System.out.println("Você se juntou a Beelzebulmon");
-            System.out.println("Ele te traiu e roubou seu poder Ancião!\n Depois ele te matou e conseguiu conquistar o DIGI_MUNDO");
+            System.out.println("Você se juntou a Beelzebulmon");
+            System.out.println("Ele te traiu e roubou seu poder Ancião!\n Depois ele te matou e conseguiu conquistar o DIGI_MUNDO\n\n");
+            System.out.println("SEU DIGIMON FOI DELETADO DO BANCO DE DADOS !!!\n");
             digimon1.dano(100);
+            digimon1.N_evolui(8000);
             digimon1.Dig();
+            System.out.println("BEELZEBUMON SE TORNOU MAIS FORTE ELE DIGI_EVOLUIU PARA SUA FORMA MALIGNA!\n");
+            Beelzebumon.recupera(100);
+            Beelzebumon.evolui(8000);
+            Beelzebumon.Dig();
+            System.out.println("BEELZEBUMON SE TORNOU O GOVERNANTE SOMBRIO DO DIGI_MUNDO!");
+
 
 
             }
 
 
         }
-
+        //SEGUNDO FINAL. O MAL GANHA.
+        
         if(poder.equals("JUNTAR")){
+            
             System.out.println("Você se juntou a Beelzebulmon");
-            System.out.println("Ele te traiu e roubou seu poder Ancião!\n Depois ele te matou e conseguiu conquistar o DIGI_MUNDO");
+            System.out.println("Ele te traiu e roubou seu poder Ancião!\n Depois ele te matou e conseguiu conquistar o DIGI_MUNDO\n\n");
+            System.out.println("SEU DIGIMON FOI DELETADO DO BANCO DE DADOS !!!\n");
             digimon1.dano(100);
+            digimon1.N_evolui(8000);
             digimon1.Dig();
+            System.out.println("BEELZEBUMON SE TORNOU MAIS FORTE ELE DIGI_EVOLUIU PARA SUA FORMA MALIGNA!\n");
+            Beelzebumon.recupera(100);
+            Beelzebumon.evolui(8000);
+            Beelzebumon.Dig();
+            System.out.println("BEELZEBUMON SE TORNOU O GOVERNANTE SOMBRIO DO DIGI_MUNDO!");
 
         }
+
+        //ELSE NÃO ESTÁ FUNCIONANDO DA MANEIRA QUE EU QUERO.
+
         else{
-            System.out.println("Essa opção não existe!"); 
+            System.out.println("[ == ): ERRO, DIGI_DADOS COMRROMPIDOS ( PERIOGO, PERIGO ) :( ==]"); 
 
         }
 }
