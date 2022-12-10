@@ -1,9 +1,15 @@
+//CRIAMOS UM MEIO DE CRIAS VARIOS PERSONAGENS
+
 public class Personagem {
+
+    //DEFINIMOS AS CARACTERICAS DOS PERSONAGENS.
 
     String nome;
     String elemento;
     int vida;
     int pontos_de_batalha;
+
+    //CRIAÇÃO DO PRIMEIRO METODO, RESPONSAVEL POR ARMAZENAR OS DADOS INFORMADOS.
 
     void Dig(){
         System.out.println("Digimon:"+ this.nome);
@@ -11,11 +17,15 @@ public class Personagem {
         System.out.println("Elemento:" + this.elemento);
         System.out.println("Pontos_De_Batalha:" + pontos_de_batalha);
 
+        //CRIAÇÃO DE UMA CONSEQUENCIA PARA A BARAA DE VIDA CHEGAR A 0.
+
         if(this.vida ==0){
             System.out.println( "[ O Digimon " + nome + " voltou a ser um Digi_Ovo.]");
             System.out.println("[ O DIGIMON FOI DELETADO DO BANCO DE DADOS!!! ]");
         }
     }
+
+        //CRIAÇÃO DOS CRITERIOS DE CADA PERSONAGEM. E ORDEM DESSAS INFORMAÇÕES.
 
         Personagem(String nome, String elemento,int vida,int pontos_de_batalha)
         {
@@ -25,10 +35,14 @@ public class Personagem {
             this.pontos_de_batalha = pontos_de_batalha;
 
         }
+        //PERSONAGEM VAZIO.
 
         Personagem(){
 
         }
+
+        //METODO CRIADO PARA PERDE PONTOS DE VIDA.
+
         void dano(int perde_vida){
             
             this.vida = this.vida - perde_vida;
@@ -36,11 +50,15 @@ public class Personagem {
             System.out.println(this.nome + "[ acabou perdendo " + perde_vida + "pontos de vida. ]" );
         }
 
+        //METODO CRIADO PARA GANHAR PONTOS DE VIDA.
+
         void recupera(int ganha_vida){
             this.vida = this.vida + ganha_vida;
 
             System.out.println(this.nome + "[ acabou ganhando " + ganha_vida + "pontos de vida. ]" );
         }
+
+        //METODO CRIADO PARA PERDE PONTOS DE BATALHA OU EXP.
 
         void N_evolui(int perde_EXP){
             this.pontos_de_batalha = this.pontos_de_batalha - perde_EXP;
@@ -48,10 +66,11 @@ public class Personagem {
             System.out.println(this.nome + "[ acabou perdendo " + perde_EXP + "pontos de batalha. ]" );
         }
         
+        //METODO CRIADO PARA GANHAR PONTOS DE BATALHA OU EXP.
+
         void evolui(int ganha_EXP){
             this.pontos_de_batalha = this.pontos_de_batalha + ganha_EXP;
 
             System.out.println(this.nome + "[ acabou ganhando " + ganha_EXP + "pontos de batalha. ]" );
         }
         }
-    
