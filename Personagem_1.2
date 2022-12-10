@@ -1,0 +1,38 @@
+public class Personagem {
+
+    String nome;
+    String elemento;
+    int vida;
+    int pontos_de_batalha;
+
+    void Dig(){
+        System.out.println("Digimon:"+ this.nome);
+        System.out.println("Vida:" + this.vida);
+        System.out.println("Elemento:" + this.elemento);
+        System.out.println("Pontos_De_Batalha:" + pontos_de_batalha);
+
+        if(this.vida ==0){
+            System.out.println( "[ O Digimon " + nome + " voltou a ser um Digi_Ovo.]");
+            System.out.println("[ Você venceu e salvou o Digi_Mundo, e todos os seuS amigos. ]");
+        }
+    }
+
+        Personagem(String nome, String elemento,int vida,int pontos_de_batalha)
+        {
+            this.nome = nome;
+            this.elemento = elemento;
+            this.vida = vida;
+            this.pontos_de_batalha = pontos_de_batalha;
+
+        }
+
+        Personagem(){
+
+        }
+        void dano(int perde_vida){
+            
+            this.vida = this.vida - perde_vida;
+        
+            System.out.println(this.nome + "[ acabou perdendo " + perde_vida + "pontos de vida. ]" );
+        }
+        }
