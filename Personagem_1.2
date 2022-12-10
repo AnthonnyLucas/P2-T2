@@ -13,7 +13,7 @@ public class Personagem {
 
         if(this.vida ==0){
             System.out.println( "[ O Digimon " + nome + " voltou a ser um Digi_Ovo.]");
-            System.out.println("[ Você venceu e salvou o Digi_Mundo, e todos os seuS amigos. ]");
+            System.out.println("[ O DIGIMON FOI DELETADO DO BANCO DE DADOS!!! ]");
         }
     }
 
@@ -35,4 +35,23 @@ public class Personagem {
         
             System.out.println(this.nome + "[ acabou perdendo " + perde_vida + "pontos de vida. ]" );
         }
+
+        void recupera(int ganha_vida){
+            this.vida = this.vida + ganha_vida;
+
+            System.out.println(this.nome + "[ acabou ganhando " + ganha_vida + "pontos de vida. ]" );
         }
+
+        void N_evolui(int perde_EXP){
+            this.pontos_de_batalha = this.pontos_de_batalha - perde_EXP;
+
+            System.out.println(this.nome + "[ acabou perdendo " + perde_EXP + "pontos de batalha. ]" );
+        }
+        
+        void evolui(int ganha_EXP){
+            this.pontos_de_batalha = this.pontos_de_batalha + ganha_EXP;
+
+            System.out.println(this.nome + "[ acabou ganhando " + ganha_EXP + "pontos de batalha. ]" );
+        }
+        }
+    
