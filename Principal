@@ -1,0 +1,101 @@
+//Esse jogo conta a historia de um jovem que se tornou um Digi_Escolhido e precisa salvar toda essa dimensão cybernetica. Aproveite a aventura.
+import java.util.Scanner;
+
+public class Principal {
+    public static void main(String[] args) throws Exception {
+
+        Personagem Beelzebumon = new Personagem("Beelzebumon",100);
+
+        System.out.println("[Bem-Vindo ao Digi_Mundo. Você é um Digi_Escolhido, sua missão é salvar esse mundo!!!]\n [ Você pode me falar o seu nome? ]\n");
+        Scanner tips = new Scanner(System.in);
+        String nome = tips.nextLine();
+
+        System.out.println("Sua aventura "+nome+" começou assim que você foi escolhido a muito tempo atrás!!!\n");
+        System.out.println("Espero que você escolha um bom companheiro para sua jornada!");
+        System.out.println("[ RAPIDO RAPIDO, O DIGI_MUNDO ESTÁ ENTRANDO EM COLAPSO, VOCÊ PERCISA IR LOGO!!! ]\n\n");
+        System.out.println("Vamos escolher um companheiro( Digimon ) para você inciar a jornada!\n\n[ == DIGIMONS == ]:\n[ AGUMON ]\n[ GUILMON ]\n[ GABUMON ]\nR:");
+        Scanner dig = new Scanner(System.in);
+        String digimon = dig.nextLine();
+        
+        if(dig.equals("[ AGUMON ]")){
+            System.out.println("Você escolheu AGUMON como o seu Digimon!");
+        }
+        if(dig.equals("[ GUILMON ]")){
+                    System.out.println("Você escolheu GUILMON como o seu Digimon!");
+        }
+        if(dig.equals("[ GABUMON ]")){
+                    System.out.println("Você escolheu GABUMON como o seu Digimon!");
+        }
+        
+        System.out.println("O seu" + dig + "tem um nickname! Ela se chama ' THAY '!\n\n");
+        System.out.println("Agora a sua história se inicia, você e seu Digimon vão aprocura do Beelzebumon, que é o responsavel por todo esse caos.");
+        System.out.println("Depois de passar em um vilarejo um morador lhe fala que Beelzebumon quer tomar o poder dos Digimons Anciões.");
+        System.out.println("Para assim conseguir dominar todo o DIGI_MUNDO de uma só vez, mas ele ainda não conseguiu o poder nescessario para isso.");
+        System.out.println("Ele tambem fala sobre uma antiga carverna onde vc pode conseguir bastante poder, pois nessa caverna habita um Digimon muito forte.");
+        System.out.println("Que podera ajudar você se ele julgar o seu coração como digno, caso contrario ele ira destruir tanto você e Seu Digimon.");
+        System.out.println("O morador fala que seu nome é 'LEOMON', e fala para que assim que você se encontrar com o Guardião da caverna, fale que foi enviodo por ele.\n\n");
+        System.out.println("[ OBRIGADO LEOMON ESTOU INDO ]\n");
+        System.out.println("Assim que chegamos na caverna falamos para o guardião, que era um Digimon Ancião muito forte que 'LEOMON' tinha nos mandado ie até ele.");
+        System.out.println("Assim que ele escutou o nome do seu velho amigo ele falou que nos ajudaria, mas com uma condição, ele jugaria o meu coração\n");
+        System.out.println("E se ele fosse puro ele passaria o seu poder para nos, mas se não fosse morreriamos no processo.");
+        System.out.println("Felizmente conseguimos o poder do Digimon Ancião e fomos Atraz do Beelzebumon para derrotarmos ele, e achamos ele no seu castelo.\n ");
+
+        Personagem digimon1 = new Personagem("THAY",100);        
+        System.out.println("[ Você está pronto para essa  batalha! ]");
+        
+        System.out.println(" [ A BATALHA COMEÇOU! ]");
+        System.out.println(" [ Beelzebumon se prepara para Batalha Final ]");
+        Scanner pdr = new Scanner(System.in);
+        String poder;
+        System.out.println("Escolha entre uma das opções para continuar! (BATALHAR ou JUNTAR)");
+        poder = pdr.nextLine();
+        
+        if(poder.equals("BATALHAR")){
+            System.out.println("[ Seu ataque foi muito forte!E arrancou 50 de vida do oponente! ]\n");
+            
+            Beelzebumon.dano(50);
+            Beelzebumon.Dig();
+
+            System.out.println("[ Beelzebulmon ataca, mas acaba errado o seu ataque e não consegue te acertar!]");
+            System.out.println("O 'THAY' está assim:\n");
+            digimon1.Dig();
+            
+            System.out.println("[ A batalha cotinua!]");
+            System.out.println("Escolha entre uma das opções para continuar! (BATALHAR ou se JUNTAR A ELE)\n");
+            
+            Scanner pdr_2 = new Scanner(System.in);
+            String poder_2;
+            poder_2 = pdr_2.nextLine();
+            
+            if(poder_2.equals("BATALHAR")){
+                System.out.println("A BATALHA CHEGOU AO FIM!");
+                Beelzebumon.dano(50);
+                Beelzebumon.Dig();
+
+            }
+            
+            if(poder_2.equals("JUNTAR")){
+                System.out.println("Você se juntou a Beelzebulmon");
+            System.out.println("Ele te traiu e roubou seu poder Ancião!\n Depois ele te matou e conseguiu conquistar o DIGI_MUNDO");
+            digimon1.dano(100);
+            digimon1.Dig();
+
+
+            }
+
+
+        }
+
+        if(poder.equals("JUNTAR")){
+            System.out.println("Você se juntou a Beelzebulmon");
+            System.out.println("Ele te traiu e roubou seu poder Ancião!\n Depois ele te matou e conseguiu conquistar o DIGI_MUNDO");
+            digimon1.dano(100);
+            digimon1.Dig();
+
+        }
+        else{
+            System.out.println("Essa opção não existe!");
+
+        }
+}
+}
